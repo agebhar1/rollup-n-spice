@@ -1,0 +1,22 @@
+{
+  "name": "rollup-n-spice",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "distclean": "rm -fr node_modules dist"
+  },
+  "author": "Andreas Gebhardt",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "browser-sync": "2.24.5",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "rollup": "0.61.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-strip": "^1.1.1"
+  }
+}
