@@ -10,12 +10,14 @@ const production = false
 
 const browserSync = browserSyncFactory.create()
 
-gulp.task('html', () => gulp.src('./src/index.html').pipe(gulp.dest('./dist')));
-
-gulp.task('watch:html', gulp.series('html', (done) => {
+function reload(done) {
   browserSync.reload()
   done()
-}))
+}
+
+gulp.task('html', () => gulp.src('./src/index.html').pipe(gulp.dest('./dist')));
+
+gulp.task('watch:html', gulp.series('html', reload))
 
 gulp.task('js', async function (done) {
 
@@ -47,10 +49,7 @@ gulp.task('js', async function (done) {
 
 })
 
-gulp.task('watch:js', gulp.series('js', (done) => {
-  browserSync.reload()
-  done()
-}))
+gulp.task('watch:js', gulp.series('js', reload))
 
 gulp.task('serve', () => {
 
