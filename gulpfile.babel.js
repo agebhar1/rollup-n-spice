@@ -3,6 +3,7 @@ import browserSyncFactory from 'browser-sync'
 import { rollup } from 'rollup'
 import babel from 'rollup-plugin-babel'
 import strip from 'rollup-plugin-strip'
+import minify from 'rollup-plugin-babel-minify'
 import resolve from 'rollup-plugin-node-resolve'
 
 const production = false
@@ -29,6 +30,7 @@ gulp.task('js', async function (done) {
         ],
         babelrc: false
       }),
+      minify(),
       resolve(),
       production && strip()
     ]
